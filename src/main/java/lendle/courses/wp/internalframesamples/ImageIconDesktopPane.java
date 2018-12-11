@@ -34,8 +34,12 @@ public class ImageIconDesktopPane extends JDesktopPane{
     protected void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, getWidth(),getHeight(),this);
-    }
+        if(this.getWidth()<image.getWidth(this) || this.getWidth()<image.getWidth(this)){
+        g.drawImage(image, 0, 0,this);
+    }else{
+         g.drawImage(image, this.getWidth()/2-image.getWidth(this)/2,
+                 this.getWidth()/2-image.getWidth(this)/2,this);    
+        }
     ///////////////////////////////////////////////
     
 }
